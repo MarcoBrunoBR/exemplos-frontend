@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Exemplo de embed do vídeo do youtube com blur</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/block/video.css">
+</head>
+<body>
+  <div id="video" class="video_esperando"></div>
+
+<script>
+  // Carregando a API de forma assíncrona para não deixar a página lenta
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Substituindo a div com o id video pelo iframe
+  var player;
+
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('video', {
+      height: '360',
+      width: '640',
+      videoId: 'dxdLph7JpLs',
+      events: {
+        'onStateChange': onChange
+      }
+    });
+  }
+
+  function onChange(event) {
+    event.target.a.classList.remove('video_esperando')
+  }
+</script>
+</body>
+</html>
