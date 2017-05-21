@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="cssbb1.html" rel="stylesheet" type="text/css">
+  <link href="bootstrap/js/bootstrap.min.js" type="text/javascript">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    li {
+      font-weight: 700;
+      font-size: 20px;
+      border: thick;
+      color: aqua;
+    }
+
+    body {
+      background-color:rgba(249,211,0,1.00);
+    }
+
+    #navbar2 {
+      margin: 0px 0px 2px 0px;
+      padding: 0px 0px 2px 400px;
+    }
+
+    #imglogo {
+      padding-left: 80px;
+    }
+
+    a {
+      color:rgba(30,72,137,1.00);
+    }
+
+    #tel {
+      color: black;
+    }
+
+    #contatobutton {
+      background-color: rgba(30,72,137,1.00);
+      font-weight: 700;
+      font-size: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      margin-top: 10px;
+    }
+
+    #hrquebra1 {
+      font-size: 30px;
+      font-weight: 600;
+      color: white;
+      background-color: rgba(30,72,137,1.00);
+      padding-top: 60px;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+
+    #hrquebra2 {
+      font-size: 30px;
+      background-color:rgba(249,211,0,1.00);
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #hrquebra3 {
+      background-color:rgba(30,72,137,1.00);
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .jumbotron {
+      background-color: white;
+      padding: 80px 0px 100px 0px;
+      border-style: none;
+    }
+
+    #home {
+      color:white;
+      background-color: rgba(30,72,137,1.00);
+      padding: 25px;
+    }
+
+    #jumbocasa, #jumb1 {
+      align-self: center;
+      text-align: center;
+      padding-right: 500px;
+    }
+
+    #jumb1 {
+      padding-right: 500px;
+      padding-top: 20px;
+    }
+
+    #jumb2 {
+      float: right;
+      padding: 0px 0px 0px 0px;
+      margin: -600px 0px 0px 0px;
+    }
+
+    #jumbotron2 {
+      background-color: white;
+      height: 421.155px;
+    }
+
+    .dummy {
+      margin-top: 100%;
+    }
+    .thumbnail {
+      background-color: rgba(30,72,137,1.00);
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+      position: absolute;
+      top: 15px;
+      bottom: 0;
+      left: 15px;
+      right: 0;
+      text-align: absolute;
+      padding-top:calc(50% - 30px);
+    }
+
+    .form-group {
+      margin: 0px;
+      padding: 0px;
+      width: 600px;
+    }
+
+    #formulario {
+      padding: 0px 0px 0px 50px ;
+      margin: 0px 0px 0px 250px;
+    }
+    #formtext {
+      padding: 0px 0px 20px 0px;
+    }
+
+    #FormularioAl{
+      padding: 0px 100px 0px 0px;
+      margin: 0px 0px 0px 0px;
+    }
+
+    #imgbb {
+      padding: 0px 0px 0px 400px;
+    }
+
+    #hrquebra4 {
+      background-color:rgba(30,72,137,1.00);
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="menu">
+    <div id="menu2" class="container">
+      <nav id="menu3" class="navbar navbar-form">
+        <div class="container-fluid">
+          <div id="menuheader" class="navbar-header">
+            <img id="imglogo" src="BBomParaTodos.png" alt="Banco Do Brasil Logo">
+          </div>
+
+          <div id="navbar2">
+            <ul id="navbarmenu" class="nav navbar-nav">
+              <li><a style="padding-top: 19px" href="#" visibility="hidden">ENTENDA</a></li>
+              <li><a style="padding-top: 19px" href="#">SEM JUROS  | </a></li>
+              <li><a id="tel" href="#"> <span class="glyphicon glyphicon-earphone"></span> (99) 9999-9999</a></li>
+
+              <button id="contatobutton" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                CONTATO
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <img class="img-responsive" src="header.png">
+      <p id="hrquebra1"> <a href="#"> </a>QUERO FALAR COM UM REPRESENTANTE </p>
+    </div>
+  </section>
+  <section>
+    <div id="videosec" class="container">
+      <div id="video" class="video_esperando"></div>
+      <p id="hrquebra2"></p>
+
+      <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Substituindo a div com o id video pelo iframe
+        var player;
+
+        function onYouTubePlayerAPIReady() {
+          player = new YT.Player('video', {
+            height: '360',
+            width: '100%',
+            videoId: 'HsMuvyZdUAk',
+            events: {
+              'onStateChange': onChange
+            }
+          });
+        }
+
+        function onChange(event) {
+          console.log(event.target)
+          event.target.a.classList.remove('video_esperando')
+        }
+      </script>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="jumbotron">
+        <div id="jumbocasa">
+          <h1><span id="home" class="glyphicon glyphicon-home"></span></h1>
+          <h2 style="color: rgba(30,72,137,1.00)"> MEU IMÓVEL <strong>SEM JUROS!</strong></h2>
+        </div>
+        <div id="jumb1">
+          <p style="font-weight: 500">
+            teste teste teste teste teste teste teste teste
+            teste teste teste teste teste teste teste teste
+            teste teste teste teste teste teste teste teste <br><br>
+            Só o BB Consórcio conta com a segurança e solidez do Banco do Brasil.<br><br>
+            teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste
+          </p>
+        </div>
+        <div id="jumb2">
+          <h2 style="color:rgba(30,72,137,1.00); font-weight: 600"> Vantagens </h2><br>
+          <p style="font-weight: 500">  - teste teste teste teste teste teste  <br>
+            - teste teste teste teste teste teste teste teste teste teste  <br> teste teste teste teste teste teste teste teste teste teste  <br> dteste teste teste teste teste teste teste teste teste teste  <br> plano<br>
+            teste teste teste teste teste teste teste teste teste teste  <br>teste teste teste teste teste teste teste teste teste teste  <br>
+            - De forma flexível, você poderá<br> teste teste teste teste  <br> e contratar um plano com prazo<br> teste teste  r<br>
+            - teste teste teste teste teste teste teste teste  <br> teste teste teste teste teste teste teste teste  <br>teste teste teste teste teste teste teste teste  <br>teste teste teste teste teste teste teste teste  <br>
+            - teste teste teste teste teste teste teste teste   <br> qteste teste teste teste teste teste teste teste  <br> teste teste teste teste teste teste  <br> teste teste teste teste teste teste
+          </p>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <img class="img-responsive" src="conte-com-a-gente.png">
+  </div>
+  <section>
+    <div class="container">
+      <div id="jumbotron2" class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="dummy"></div>
+              <a href="#x" class="thumbnail purple"> <p style="margin: -49px 0px 0px 70px; text-align: left;"><strong>  CASA<br> CARRO<br>  MOTO </strong></p></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="dummy"></div>
+              <a href="#x" class="thumbnail purple"><p style="margin: -49px 0px 0px 70px; text-align: left;"><strong>CAMINHÃO<br>  TRATOR<br>BICICLETA</strong></p></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="dummy"></div>
+              <a href="#x" class="thumbnail purple"><p style="margin: -49px 0px 0px 70px; text-align: left;"> <strong>FESTA<br> CURSO<br>VIAGEM</strong></p></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6">
+              <div class="dummy"></div>
+              <a href="#x" class="thumbnail purple"><p style="margin: -49px 0px 0px 70px; text-align: left;">  <strong>TABLET<br> CELULAR<br>MUITO MAIS</strong></p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <p id="hrquebra3"></p>
+  </div>
+  <section>
+    <div id="#FormularioAl">
+      <div class="container">
+        <div id="formulario">
+          <div id="formtext">
+            <h1 style="color:rgba(30,72,137,1.00); font-weight: 800;">         SIMPLES E RÁPIDO </h1>
+            <h3 style="color:rgba(30,72,137,1.00); font-weight: 600;"> Informe seus dados abaixo e logo entraremos em contato.</h3></div>
+
+            <div class="form-group">
+              <form>
+                <input type="text" class="form-control" placeholder="Nome"><br>
+                <input type="email" class="form-control" placeholder="E-mail"><br>
+                <input type="tel" class="form-control" placeholder="Telefone"><br>
+              </form>
+              <textarea  id="areatexto" class="btn-group-justified" rows="7"></textarea><br>
+              <input style="background-color: rgba(30,72,137,1.00); color: white; font-weight: 600;" type="submit" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <footer style="background-color:rgba(30,72,137,1.00) ">
+          <div align="center" class="img-responsive">
+            <img src="bb-azul.png">
+          </div>
+        </footer>
+      </div>
+    </section>
+  </body>
+  </html>
